@@ -1,0 +1,4 @@
+exports.data = {
+    status: {},
+    data: [],
+};
