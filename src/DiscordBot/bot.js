@@ -1,5 +1,4 @@
 const { Client, Intents, MessageEmbed } = require("discord.js");
-const config = require("../../config.json");
 const requests = require("../CoinMarketCap/requests");
 const dolar = require("../DolarSi/service");
 
@@ -109,7 +108,7 @@ exports.login = (req, res) => {
                 break;
         }
     });
-    client.login(config.BOT_TOKEN);
+    client.login(process.env.BOT_TOKEN);
     res.send("Bot logged in!");
 };
 

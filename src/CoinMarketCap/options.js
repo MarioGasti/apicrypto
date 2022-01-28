@@ -1,5 +1,4 @@
 const rp = require("request-promise");
-const config = require("../../config.json");
 
 const reqOptions = (opts) => {
     return {
@@ -7,7 +6,7 @@ const reqOptions = (opts) => {
         uri: opts.uri,
         qs: opts.qs,
         headers: {
-            "X-CMC_PRO_API_KEY": config["X-CMC_PRO_API_KEY"],
+            "X-CMC_PRO_API_KEY": process.env["X-CMC_PRO_API_KEY"],
         },
         json: true,
         gzip: true,
