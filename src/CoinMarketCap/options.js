@@ -1,4 +1,5 @@
 const axios = require("axios");
+const config = require("../../config").config;
 
 const reqOptions = (opts) => {
     return {
@@ -6,7 +7,7 @@ const reqOptions = (opts) => {
         url: opts.uri,
         params: opts.qs,
         headers: {
-            "X-CMC_PRO_API_KEY": process.env["X-CMC_PRO_API_KEY"],
+            "X-CMC_PRO_API_KEY": config["X-CMC_PRO_API_KEY"],
         },
     };
 };
