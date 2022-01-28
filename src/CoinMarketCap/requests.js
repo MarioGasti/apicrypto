@@ -29,7 +29,7 @@ const loadCache = () => {
             conn(opts)
                 .then((response) => {
                     cache.data.status = response.status;
-                    cache.data.data.push(...response.data);
+                    cache.data.data.push(...response.data.data);
                     const opts = setOpts(
                         "GET",
                         "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest", {
@@ -41,7 +41,7 @@ const loadCache = () => {
                     conn(opts)
                         .then((response) => {
                             cache.data.status = response.status;
-                            cache.data.data.push(...response.data);
+                            cache.data.data.push(...response.data.data);
                             resolve(cache.data);
                         })
                         .catch((err) => {

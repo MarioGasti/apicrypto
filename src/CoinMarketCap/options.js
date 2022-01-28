@@ -1,21 +1,20 @@
-const rp = require("request-promise");
+const axios = require("axios");
 
 const reqOptions = (opts) => {
     return {
         method: opts.method,
-        uri: opts.uri,
-        qs: opts.qs,
+        url: opts.uri,
+        params: opts.qs,
         headers: {
             "X-CMC_PRO_API_KEY": process.env["X-CMC_PRO_API_KEY"],
         },
-        json: true,
-        gzip: true,
     };
 };
 
 exports.sendReq = async(opts) => {
     return new Promise((resolve, reject) => {
-        rp(reqOptions(opts))
+        console.log(reqOptions(opts));
+        axios(reqOptions(opts))
             .then((response) => {
                 resolve(response);
             })
