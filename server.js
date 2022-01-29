@@ -10,7 +10,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.listen(config.PORT, (err) => {
-    console.log(config);
     if (err) throw new Error(err);
     else console.log(`Server running at ${config.PORT}.`);
 });

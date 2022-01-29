@@ -14,7 +14,6 @@ const reqOptions = (opts) => {
 
 exports.sendReq = async(opts) => {
     return new Promise((resolve, reject) => {
-        console.log(reqOptions(opts));
         axios(reqOptions(opts))
             .then((response) => {
                 resolve(response);
