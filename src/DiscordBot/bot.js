@@ -4,7 +4,16 @@ const dolar = require("../DolarSi/service");
 const config = require("../../config").config;
 
 const commandsDictionary = (command) => {
-    if (command === "c") return "convert";
+    let newCommand;
+    switch (command) {
+        case "c":
+            newCommand = "convert";
+            break;
+        default:
+            newCommand = command;
+            break;
+    }
+    return newCommand;
 };
 
 exports.login = (req, res) => {

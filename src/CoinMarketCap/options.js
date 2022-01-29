@@ -7,7 +7,7 @@ const reqOptions = (opts) => {
         url: opts.uri,
         params: opts.qs,
         headers: {
-            "X-CMC_PRO_API_KEY": config["X-CMC_PRO_API_KEY"],
+            "X-CMC_PRO_API_KEY": config.CMC_PRO_API_KEY,
         },
     };
 };
